@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download DarkPS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #5d9cec;
+            --secondary-color: #f0f0f0;
+            --background-dark: #1a1a1a;
+            --container-bg: rgba(26, 26, 26, 0.8);
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-dark);
+            color: var(--secondary-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('URL_GAMBAR_LATAR_BELAKANG.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background-color: var(--container-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        .download-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            background-color: #4a4a4a;
+            color: white;
+            border: 2px solid var(--primary-color);
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background-color: var(--primary-color);
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .instructions {
+            text-align: left;
+            margin-top: 30px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            display: none; /* Hidden by default */
+        }
+        .instructions.show {
+            display: block; /* Show when activated */
+        }
+        .instructions ol {
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        .instructions a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .instructions a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Unduh DarkPS</h1>
+    <p>Pilih versi yang sesuai dengan perangkat Anda untuk memulai petualangan.</p>
+    
+    <div class="download-buttons">
+        <a href="#" class="download-btn" id="windows-btn">Windows</a>
+        <a href="#" class="download-btn" id="android-btn">Android</a>
+        <a href="#" class="download-btn" id="ios-btn">iOS</a>
+    </div>
+
+    <div id="windows-instructions" class="instructions">
+        <h2>Cara Unduh di Windows</h2>
+        <ol>
+            <li>Tekan <b>⊞ Win</b> + <b>R</b> untuk membuka Run</li>
+            <li>Ketik <b>C:\Windows\System32\drivers\etc</b> lalu Enter</li>
+            <li>Klik kanan file <b>hosts</b> → buka dengan Notepad (Admin)</li>
+            <li>Tambahkan host dari tombol Copy IP</li>
+            <li>Simpan file, buka Growtopia!</li>
+        </ol>
+    </div>
+
+    <div id="android-instructions" class="instructions">
+        <h2>Cara Unduh di Android</h2>
+        <ol>
+            <li>Unduh <a href="https://sfile.mobi/9yeA3hP6fYz">PowerTunnel</a></li>
+            <li>Klik tombol PowerTunnel di atas</li>
+            <li>Buka PowerTunnel → Host Settings</li>
+            <li>Tempel URL, ubah host update period ke "on start"</li>
+            <li>Buka Growtopia dan nikmati servernya!</li>
+        </ol>
+    </div>
+
+    <div id="ios-instructions" class="instructions">
+        <h2>Cara Unduh di iOS</h2>
+        <ol>
+            <li>Unduh <a href="https://apps.apple.com/app/surge-5/id1442620678">Surge 5</a></li>
+            <li>Masuk ke menu IMPORT → Download Profile from URL</li>
+            <li>Tempel URL dari tombol di atas</li>
+            <li>Setup dan izinkan konfigurasi VPN</li>
+            <li>Buka Growtopia dan mainkan!</li>
+        </ol>
+    </div>
+    
+    <a href="index.html" class="back-btn">Kembali ke Halaman Utama</a>
+
+</div>
+
+<script>
+    function hideAllInstructions() {
+        document.getElementById('windows-instructions').classList.remove('show');
+        document.getElementById('android-instructions').classList.remove('show');
+        document.getElementById('ios-instructions').classList.remove('show');
+    }
+
+    document.getElementById('windows-btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        hideAllInstructions();
+        document.getElementById('windows-instructions').classList.add('show');
+    });
+
+    document.getElementById('android-btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        hideAllInstructions();
+        document.getElementById('android-instructions').classList.add('show');
+    });
+
+    document.getElementById('ios-btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        hideAllInstructions();
+        document.getElementById('ios-instructions').classList.add('show');
+    });
+</script>
+
+</body>
+</html>
